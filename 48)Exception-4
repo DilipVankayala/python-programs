@@ -1,0 +1,3 @@
+x=-1
+if x<0:
+    raise exception("sorry,no number below 0")
