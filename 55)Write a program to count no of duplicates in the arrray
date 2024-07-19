@@ -1,0 +1,13 @@
+from collections import Counter
+def count_duplicates(arr):
+    counter = Counter(arr)
+    duplicate_count = 0
+    for count in counter.values():
+        if count > 1:
+            duplicate_count += 1
+    return duplicate_count
+if __name__ == "__main__":
+    array = [1, 2, 3, 4, 5, 2, 3, 4, 4, 5]
+    duplicates = count_duplicates(array)
+    print("Original Array:", array)
+    print("Number of duplicates:", duplicates)
