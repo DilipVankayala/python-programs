@@ -1,0 +1,38 @@
+class ShoppingCart:
+    def __init__(self):
+        self.items = {}
+    def add_item(self, item_name, price, quantity=1):
+        if item_name in self.items:
+            self.items[item_name] = (price, self.items[item_name][1] + quantity)
+        else:
+            self.items[item_name] = (price, quantity)
+        print(f"{quantity} {item_name}(s) added to the cart.")
+    def remove_item(self, item_name, quantity=1):
+        if item_name in self.items:
+            current_quantity = self.items[item_name][1]
+            if quantity >= current_quantity:
+                del self.items[item_name]
+            else:
+                self.items[item_name] = (self.items[item_name][0], current_quantity - quantity)
+            print(f"{quantity} {item_name}(s) removed from the cart.")
+        else:
+            print(f"{item_name} is not in the cart.")
+    def calculate_total_price(self):
+        total_price = 0.0
+        for item_name, (price, quantity) in self.items.items():
+            total_price += price * quantity
+        return total_price
+    def print_cart(self):
+        print("Current Cart:")
+        for item_name, (price, quantity) in self.items.items():
+            print(f"{item_name}: ${price:.2f} x {quantity} = ${price * quantity:.2f}")
+        print(f"Total Price: ${self.calculate_total_price():.2f}")
+if __name__ == "__main__":
+    cart = ShoppingCart()
+    cart.add_item("Apple",10,3)
+    cart.add_item("Banana",5,5)
+    cart.add_item("Orange",7,2)
+    cart.print_cart()
+    cart.remove_item("Apple",2)
+    cart.remove_item("Banana")
+    cart.print_cart()
