@@ -1,0 +1,10 @@
+def copy_array(arr):
+    copied_arr = []
+    for elem in arr:
+        copied_arr.append(elem)
+    return copied_arr
+if __name__ == "__main__":
+    original_array = [1, 2, 3, 4, 5]
+    copied_array = copy_array(original_array)
+    print("Original Array:", original_array)
+    print("Copied Array:", copied_array)
