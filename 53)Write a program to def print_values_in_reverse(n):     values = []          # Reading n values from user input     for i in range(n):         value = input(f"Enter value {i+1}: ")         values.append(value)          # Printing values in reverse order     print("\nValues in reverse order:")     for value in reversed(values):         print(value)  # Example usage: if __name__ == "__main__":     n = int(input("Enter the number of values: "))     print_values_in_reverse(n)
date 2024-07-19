@@ -1,0 +1,11 @@
+def print_values_in_reverse(n):
+    values = []
+    for i in range(n):
+        value = input(f"Enter value {i+1}: ")
+        values.append(value)
+    print("\nValues in reverse order:")
+    for value in reversed(values):
+        print(value)
+if __name__ == "__main__":
+    n = int(input(""))
+    print_values_in_reverse(n)
