@@ -1,0 +1,10 @@
+import math
+def factorial_of_large_numbers(arr):
+    results=[]
+    for num in arr:
+        factorial = math.factorial(num)
+        results.append(factorial)
+    return results
+numbers = [5,6,7]
+factorials=factorial_of_large_numbers(numbers)
+print("Factorials:",factorials)
