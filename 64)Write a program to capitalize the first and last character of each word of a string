@@ -1,0 +1,12 @@
+def capitalize_first_last(word):
+    if len(word)<2:
+        return word.capitalize()
+    return word[0].upper()+word[1:-1]+word[-1].upper()
+def capitalize_words(string):
+    words=string.split()
+    capitalized_words=[capitalize_first_last(word) for word in words]
+    return ' '.join(capitalized_words)
+input_string="hello world example"
+output_string=capitalize_words(input_string)
+print("Input:",input_string)
+print("Output:",output_string)
