@@ -1,16 +1,16 @@
 import math
-def permutations(n, k):
-    if n < 0 or k < 0:
+def permutations(n,k):
+    if n<0 or k<0:
         raise ValueError("Values of n and k must be non-negative")
-    if k > n:
+    if k>n:
         return 0
-    return math.factorial(n) // math.factorial(n - k)
-def combinations(n, k):
-    if n < 0 or k < 0:
+    return math.factorial(n)//math.factorial(n-k)
+def combinations(n,k):
+    if n<0 or k<0:
         raise ValueError("Values of n and k must be non-negative")
-    if k > n:
+    if k>n:
         return 0
-    return math.factorial(n) // (math.factorial(k) * math.factorial(n - k))
+    return math.factorial(n)//(math.factorial(k)*math.factorial(n-k))
 # Example usage
 n = 5
 k = 3
