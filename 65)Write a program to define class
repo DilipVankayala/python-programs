@@ -1,0 +1,9 @@
+class Student:
+    def _init_(self,name,marks):
+        self.name=name
+        self.marks=marks
+        print("adding new student in database")
+s1=Student("Ravi",90)
+print(s1.name,s1.marks)
+s2=Student("Kiran",90)
+print(s2.name,s2.marks)
